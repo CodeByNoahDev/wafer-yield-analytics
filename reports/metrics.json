@@ -1,0 +1,129 @@
+{
+  "classification": {
+    "n_wafers": 2300,
+    "n_features": 66,
+    "cv_model_comparison": {
+      "logistic_regression": {
+        "macro_f1_mean": 0.9338373019038736,
+        "macro_f1_std": 0.010624455448332265
+      },
+      "random_forest": {
+        "macro_f1_mean": 0.94412797825283,
+        "macro_f1_std": 0.013240711495018697
+      },
+      "gradient_boosting": {
+        "macro_f1_mean": 0.9480691440150772,
+        "macro_f1_std": 0.0055190335851122135
+      }
+    },
+    "selected_model": "gradient_boosting",
+    "holdout_macro_f1": 0.9325,
+    "holdout_accuracy": 0.9391,
+    "holdout_f1_per_class": {
+      "center": 0.927,
+      "donut": 0.961,
+      "edge_loc": 0.964,
+      "edge_ring": 0.982,
+      "loc": 0.731,
+      "near_full": 1.0,
+      "none": 0.967,
+      "random": 1.0,
+      "scratch": 0.86
+    },
+    "top_features": [
+      "zone_edge_rank4",
+      "cluster_area_frac",
+      "radial_0.00_0.20",
+      "cluster_elongation",
+      "cluster_mean_r"
+    ]
+  },
+  "yield": {
+    "true_d0_per_cm2": 0.15,
+    "true_alpha": 2.0,
+    "fits": {
+      "poisson": {
+        "params": [
+          0.13000395968670167
+        ],
+        "rmse": 0.013357589524039986
+      },
+      "murphy": {
+        "params": [
+          0.138123793650252
+        ],
+        "rmse": 0.007451113176742121
+      },
+      "seeds": {
+        "params": [
+          0.17854069657297975
+        ],
+        "rmse": 0.014619958812667673
+      },
+      "negative_binomial": {
+        "params": [
+          0.15037377849561043,
+          2.250030419226554
+        ],
+        "rmse": 0.0007889317304495431
+      }
+    },
+    "best_model": "negative_binomial",
+    "yield_at_1cm2": 0.8643113122743875
+  },
+  "spc": {
+    "average_run_length": {
+      "shift_0.0_sigma": {
+        "rule1_only": 370.9,
+        "all_western_electric": 77.6,
+        "ewma": 553.9
+      },
+      "shift_0.5_sigma": {
+        "rule1_only": 157.1,
+        "all_western_electric": 27.2,
+        "ewma": 43.8
+      },
+      "shift_1.0_sigma": {
+        "rule1_only": 42.8,
+        "all_western_electric": 9.4,
+        "ewma": 9.8
+      },
+      "shift_2.0_sigma": {
+        "rule1_only": 6.3,
+        "all_western_electric": 3.4,
+        "ewma": 2.9
+      }
+    },
+    "center_nm": 49.898,
+    "sigma_nm": 0.319,
+    "spike_detected_by_rule1": true,
+    "runs_to_detect_shift": {
+      "rule1_only": 3,
+      "any_western_electric_rule": 3,
+      "ewma": 3
+    },
+    "false_alarms_before_shift": [
+      20,
+      22
+    ],
+    "capability_before_shift": {
+      "mean": 50.01287800559924,
+      "sigma_within": 0.35716062736915827,
+      "sigma_overall": 0.3954152790901615,
+      "Cp": 1.3999303441787387,
+      "Cpk": 1.3879114703048183,
+      "Pp": 1.264493373019082,
+      "Ppk": 1.2536372711937869
+    },
+    "capability_after_shift": {
+      "mean": 50.30588061873612,
+      "sigma_within": 0.3653468222838597,
+      "sigma_overall": 0.3204877870858017,
+      "Cp": 1.3685626081934832,
+      "Cpk": 1.0894847566112573,
+      "Pp": 1.5601218522131668,
+      "Ppk": 1.2419811605740316
+    }
+  },
+  "runtime_s": 87.8
+}
